@@ -1,3 +1,7 @@
 Project 1: Storm Viewer
 Constants and variables, UITableView, UIImageView, FileManager, storyboards
 Get started coding in Swift by making an image viewer app and learning key concepts.
+
+Includes Project 3: Social Media
+UIBarButtonItem, UIActivityViewController, URL
+Let users share to Facebook and Twitter by modifying project 1.
