@@ -1,0 +1,4 @@
+apple.com
+google.com
+hackingwithswift.com
+nos.nl
