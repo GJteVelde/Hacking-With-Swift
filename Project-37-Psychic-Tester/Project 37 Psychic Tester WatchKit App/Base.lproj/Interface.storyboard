@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Project_37_Psychic_Tester_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" alignment="center" verticalAlignment="center" hidden="YES" text="Please read the instructions on your phone before continuing." textAlignment="center" numberOfLines="0" id="vid-Wn-29g"/>
+                        <button width="1" alignment="center" verticalAlignment="center" hidden="YES" title="I'm Ready" id="5wl-yN-8Ve">
+                            <connections>
+                                <action selector="hideWelcomeText" destination="AgC-eL-Hgc" id="Aet-2m-vmk"/>
+                            </connections>
+                        </button>
+                        <button width="136" height="273" alignment="center" verticalAlignment="center" title="Activate Winning Mode" id="y66-nZ-7Ew">
+                            <connections>
+                                <action selector="winningModeButtonTapped" destination="AgC-eL-Hgc" id="C1e-Ra-Tum"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="hideButton" destination="5wl-yN-8Ve" id="XQJ-md-fx6"/>
+                        <outlet property="welcomeText" destination="vid-Wn-29g" id="WdX-Yp-5Wf"/>
+                        <outlet property="winningModeButton" destination="y66-nZ-7Ew" id="kH1-va-p4E"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="25.869565217391301" y="73.616071428571431"/>
+        </scene>
+    </scenes>
+</document>
