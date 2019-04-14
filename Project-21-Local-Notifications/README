@@ -1,0 +1,3 @@
+Project 21: Local Notifications
+UNUserNotificationCenter, UNNotificationRequest, UNMutableNotificationContent, UNCalendarNotificationTrigger, and UNTimeIntervalNotificationTrigger
+Send reminders, prompts and alerts even when your app isn't running.
