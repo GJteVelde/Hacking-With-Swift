@@ -25,16 +25,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var gameState = GameState.showingLogo
     
+    var rockDistance: CGFloat = 70
+    var gravity: CGVector = CGVector(dx: 0.0, dy: -5.0)
+    
     var scoreLabel: SKLabelNode!
     var score = 0 {
         didSet {
             scoreLabel.text = "SCORE: \(score)"
+            
+            if score % 5 == 0 {
+                rockDistance *= 0.9
+                gravity.dy *= 1.1
+            }
         }
     }
     
     //MARK: - Life Cycle
     override func didMove(to view: SKView) {
-        physicsWorld.gravity = CGVector(dx: 0.0, dy: -5.0)
+        physicsWorld.gravity = gravity
         physicsWorld.contactDelegate = self
         
         if let musicURL = Bundle.main.url(forResource: "music", withExtension: "m4a") {
@@ -80,6 +88,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         guard player != nil else { return }
+        
+        physicsWorld.gravity = gravity
         
         let value = player.physicsBody!.velocity.dy * 0.001
         let rotate = SKAction.rotate(toAngle: value, duration: 0.1)
@@ -253,7 +263,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let max = CGFloat(Int(frame.height / 3))
         let yPosition = CGFloat.random(in: -50...max)
         
-        let rockDistance: CGFloat = 70
         
         topRock.position = CGPoint(x: xPosition, y: yPosition + topRock.size.height + rockDistance)
         bottomRock.position = CGPoint(x: xPosition, y: yPosition - rockDistance)
