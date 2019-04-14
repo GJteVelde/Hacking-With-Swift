@@ -1,3 +1,7 @@
 Project 10: Names to Faces
 UICollectionView, UIImagePickerController, UUID, classes
 Get started with UICollectionView and the photo library.
+
+Includes Project 12: UserDefaults
+UserDefaults, NSCoding, Codable, NSKeyedArchiver
+Learn how to save user settings and data for later use.
