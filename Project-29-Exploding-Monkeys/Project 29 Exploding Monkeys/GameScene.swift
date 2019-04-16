@@ -197,6 +197,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let buildingLocation = convert(contactPoint, to: building)
         building.hitAt(point: buildingLocation)
         
+        if let index = buildings.firstIndex(of: building) {
+            if index - 1 >= 0 {
+                let leftBuilding = buildings[index - 1]
+                let leftBuildingLocation = convert(contactPoint, to: leftBuilding)
+                leftBuilding.hitAt(point: leftBuildingLocation)
+            }
+            
+            if index + 1 < buildings.count {
+                let rightBuilding = buildings[index + 1]
+                let rightBuildingLocation = convert(contactPoint, to: rightBuilding)
+                rightBuilding.hitAt(point: rightBuildingLocation)
+            }
+        }
+        
         let explosion = SKEmitterNode(fileNamed: "hitBuilding")!
         explosion.position = contactPoint
         addChild(explosion)

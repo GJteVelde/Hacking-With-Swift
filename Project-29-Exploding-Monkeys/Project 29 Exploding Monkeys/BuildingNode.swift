@@ -73,7 +73,7 @@ class BuildingNode: SKSpriteNode {
     }
     
     func hitAt(point: CGPoint) {
-        let convertedPoint = CGPoint(x: point.x + size.width / 2.0, y: abs(point.y - (size.height / 2.0)))
+        let convertedPoint = CGPoint(x: point.x + (size.width / 2.0), y: (size.height / 2.0) - point.y)
         
         let renderer = UIGraphicsImageRenderer(size: size)
         let image = renderer.image { (context) in
