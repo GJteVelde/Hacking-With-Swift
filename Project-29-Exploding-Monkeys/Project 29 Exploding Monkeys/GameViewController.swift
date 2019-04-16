@@ -15,12 +15,25 @@ class GameViewController: UIViewController {
     //MARK: - Properties and Objects
     var currentGame: GameScene!
     
+    var player1Wins = 0 {
+        didSet {
+            player1WinsLabel.text = "Wins: \(player1Wins)"
+        }
+    }
+    var player2Wins = 0 {
+        didSet {
+            player2WinsLabel.text = "Wins: \(player2Wins)"
+        }
+    }
+    
     @IBOutlet weak var angleSlider: UISlider!
     @IBOutlet weak var angleLabel: UILabel!
     @IBOutlet weak var velocitySlider: UISlider!
     @IBOutlet weak var velocityLabel: UILabel!
     @IBOutlet weak var launchButton: UIButton!
     @IBOutlet weak var playerNumber: UILabel!
+    @IBOutlet weak var player1WinsLabel: UILabel!
+    @IBOutlet weak var player2WinsLabel: UILabel!
     
     //MARK: - View Controller Life Cycle
     override func viewDidLoad() {

@@ -179,6 +179,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             newGame.viewController = self.viewController
             self.viewController.currentGame = newGame
             
+            if player == self.player1 {
+                self.viewController.player2Wins += 1
+            } else {
+                self.viewController.player1Wins += 1
+            }
+            
             self.changePlayer()
             newGame.currentPlayer = self.currentPlayer
             

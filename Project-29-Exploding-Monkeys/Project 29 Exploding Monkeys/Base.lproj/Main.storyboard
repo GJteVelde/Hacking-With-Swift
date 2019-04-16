@@ -64,14 +64,44 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye6-Nc-rbv">
+                                <rect key="frame" x="20" y="704" width="150" height="44"/>
+                                <color key="backgroundColor" red="4.0915649151429534e-05" green="0.0" blue="0.68218940496444702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1P0-cs-d0J"/>
+                                    <constraint firstAttribute="width" constant="150" id="wXl-Vh-ade"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEv-8k-j8f">
+                                <rect key="frame" x="854" y="704" width="150" height="44"/>
+                                <color key="backgroundColor" red="4.0915649151429534e-05" green="0.0" blue="0.68218940496444702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6Ji-60-iAE"/>
+                                    <constraint firstAttribute="height" constant="44" id="sHa-hq-AJq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="lEv-8k-j8f" secondAttribute="bottom" constant="20" id="PLT-uZ-vv3"/>
+                            <constraint firstItem="Ye6-Nc-rbv" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="S6E-AJ-P7g"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Ye6-Nc-rbv" secondAttribute="bottom" constant="20" id="Zk2-DO-aIK"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="lEv-8k-j8f" secondAttribute="trailing" constant="20" id="n6a-bt-xeC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
                         <outlet property="angleLabel" destination="XhZ-tg-99s" id="4sT-mG-qVm"/>
                         <outlet property="angleSlider" destination="pRl-1O-Tnj" id="25J-sj-KNU"/>
                         <outlet property="launchButton" destination="QxA-HM-bXn" id="MWe-Z7-che"/>
+                        <outlet property="player1WinsLabel" destination="Ye6-Nc-rbv" id="eRo-kq-nTe"/>
+                        <outlet property="player2WinsLabel" destination="lEv-8k-j8f" id="CEM-ui-lko"/>
                         <outlet property="playerNumber" destination="nHK-LM-F7c" id="yOd-WF-uV1"/>
                         <outlet property="velocityLabel" destination="mj0-xy-5G1" id="1nS-zY-Bks"/>
                         <outlet property="velocitySlider" destination="dOU-5Z-8px" id="DMa-6E-OwL"/>
