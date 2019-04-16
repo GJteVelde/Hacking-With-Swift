@@ -229,6 +229,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             currentPlayer = 1
         }
         
+        viewController.angleSlider.setValue(45, animated: true)
+        viewController.angleChanged(viewController.angleSlider)
+        
+        viewController.velocitySlider.setValue(125, animated: true)
+        viewController.velocityChanged(viewController.velocitySlider)
+        
         viewController.activatePlayer(number: currentPlayer)
     }
     
