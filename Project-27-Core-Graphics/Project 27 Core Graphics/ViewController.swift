@@ -145,12 +145,82 @@ class ViewController: UIViewController {
         
         imageView.image = image
     }
+    
+    func drawHouseOnHill() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { (context) in
+            //Create Sky
+            context.cgContext.setFillColor(UIColor.cyan.cgColor)
+            context.cgContext.fill(CGRect(x: 0, y: 0, width: 512, height: 512))
+            
+            //Create Hill
+            context.cgContext.setFillColor(UIColor.green.cgColor)
+            context.cgContext.fillEllipse(in: CGRect(x: -100, y: 384, width: 712, height: 250))
+            
+            //Create Clouds
+            context.cgContext.setFillColor(UIColor.white.cgColor)
+            context.cgContext.fillEllipse(in: CGRect(x: 250, y: 20, width: 80, height: 40))
+            context.cgContext.fillEllipse(in: CGRect(x: 300, y: 30, width: 80, height: 40))
+            context.cgContext.fillEllipse(in: CGRect(x: 400, y: 60, width: 120, height: 55))
+            context.cgContext.fillEllipse(in: CGRect(x: 450, y: 90, width: 80, height: 40))
+            
+            //Create House
+            context.cgContext.setFillColor(UIColor.brown.cgColor)
+            context.cgContext.fill(CGRect(x: 206, y: 300, width: 100, height: 100))
+            
+            //roof
+            context.cgContext.addLines(between: [CGPoint(x: 256, y: 250), CGPoint(x: 316, y: 300), CGPoint(x: 196, y: 300), CGPoint(x: 256, y: 250)])
+            context.cgContext.fillPath()
+            
+            //door
+            context.cgContext.setFillColor(UIColor.lightGray.cgColor)
+            context.cgContext.fill(CGRect(x: 216, y: 360, width: 20, height: 40))
+            
+            //windows
+            for row in 0 ..< 2 {
+                for col in 0 ..< 3 {
+                    if row == 1 && col == 0 {
+                        continue
+                    }
+                    if (row + col) % 2 == 0 {
+                        context.cgContext.setFillColor(UIColor.yellow.cgColor)
+                    } else {
+                        context.cgContext.setFillColor(UIColor.lightGray.cgColor)
+                    }
+                    context.fill(CGRect(x: 216 + (col * 30), y: 310 + (row * 50), width: 20, height: 20))
+                }
+            }
+            
+            context.cgContext.fillEllipse(in: CGRect(x: 246, y: 265, width: 20, height: 20))
+            
+            //Create Sun
+            context.cgContext.setFillColor(UIColor.yellow.cgColor)
+            context.cgContext.fillEllipse(in: CGRect(x: -100, y: -100, width: 200, height: 200))
+            
+            for _ in 0 ..< 7 {
+                let rotation = CGFloat.pi / 12
+                
+                context.cgContext.move(to: CGPoint(x: 110, y: 0))
+                context.cgContext.addLine(to: CGPoint(x: 250, y: 0))
+                
+                context.cgContext.setStrokeColor(UIColor.yellow.cgColor)
+                context.cgContext.setLineWidth(20)
+                
+                context.cgContext.rotate(by: rotation)
+            }
+            
+            context.cgContext.strokePath()
+        }
+        
+        imageView.image = image
+    }
 
     //MARK: - Actions
     @IBAction func redrawTouchUpInside(_ sender: UIButton) {
         currentDrawType += 1
         
-        if currentDrawType > 5 {
+        if currentDrawType > 6 {
             currentDrawType = 0
         }
         
@@ -158,7 +228,7 @@ class ViewController: UIViewController {
         case 0:
             drawRectangle()
         case 1:
-            drawCircle()
+            drawHouseOnHill()
         case 2:
             drawCheckerboard()
         case 3:
@@ -167,6 +237,8 @@ class ViewController: UIViewController {
             drawLines()
         case 5:
             drawImagesAndText()
+        case 6:
+            drawCircle()
         default:
             break
         }
