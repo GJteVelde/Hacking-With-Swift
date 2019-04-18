@@ -2,10 +2,6 @@ Project 7: Whitehouse Petitions
 JSON, Data, UITabBarController
 Make an app to parse Whitehouse petitions using JSON and a tab bar.
 
-Project 3: Social Media
-UIBarButtonItem, UIActivityViewController, URL
-Let users share to Facebook and Twitter by modifying project 1.
-
 Includes Project 9: Grand Central Dispatch
 DispatchQueue, perform(inBackground:)
 Learn how to run complex tasks in the background with GCD.
